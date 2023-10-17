@@ -1,6 +1,9 @@
+import { CarProps, FilterProps } from "@/types"
 
-const fetchCars = async function(){
-    const response = await fetch('https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla',{
+const fetchCars = async function(filters:FilterProps){
+    const { manufacturer, year, model, limit, fuel } = filters;
+
+    const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,{
         headers:{
             'X-RapidAPI-Key': 'd0b4be5dc9mshf40951c03e0ecfep1d36b5jsnc315bc54f5dd',
 		'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
@@ -28,3 +31,6 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
     return rentalRatePerDay.toFixed(0);
   };
 
+export const generateCarImageUrl = (car:CarProps,angle?:string)=>{
+    
+}

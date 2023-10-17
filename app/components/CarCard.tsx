@@ -33,7 +33,7 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
-          src="/hero.png"
+          src="/bmw.png"
           alt="car image"
           fill
           priority
